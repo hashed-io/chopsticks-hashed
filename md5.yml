@@ -1,0 +1,19 @@
+endpoint: wss://c1md5.hashed.live
+mock-signature-host: true
+block: ${env.MD5_BLOCK_NUMBER}
+db: ./md5.rococo.db.sqlite
+allow-unresolved-imports: true
+wasm-override: /home/sebastian/vsc-workspace/hashed-substrate-parachain/target/release/wbuild/hashed-parachain-runtime/hashed_parachain_runtime.compact.compressed.wasm
+runtime-log-level: 5
+
+import-storage:
+  Sudo:
+    Key: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY # Alice
+  System:
+    Account:
+      -
+        -
+          - 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
+        - providers: 1
+          data:
+            free: "100000000000000000000000"
